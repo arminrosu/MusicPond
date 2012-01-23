@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>MusicPond</title>
+		
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.4.1/build/cssreset/cssreset-min.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	</head>
+
+	<body>
+		<header>
+			<h1>Play something great:</h1>
+			<div id="progressBar"><div class="elapsed"></div></div>
+			
+			<ul class="controls">
+				<li class="playlist">toggle playlist</li>
+				<li class="mute inactive">mute</li>
+				<li id="play_btn">play/skip</li>
+			</ul>
+			
+			<nav>
+				<ul id="playlist" class="open">
+					
+				</ul>
+				
+				<form id="add-video">
+					<input id="videoNew" type="text" name="video-new" value="" placeholder="Add another youtube video (url) to the qeue" />
+					<input id="videoAdd" type="submit" name="video-add" value="+" />
+				</form>
+			</nav>
+		</header>
+					
+		<div id="videoContainer">
+			<div id="videoOverlay"></div>
+		
+			<div id="videoFrame"></div>
+		</div><!-- #videoContainer -->
+
+		<!-- JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="js/scripts.php"></script>
+	</body>
+</html>
