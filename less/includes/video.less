@@ -1,0 +1,29 @@
+/* VIDEO PLAYER */
+#videoContainer {
+	height: 240px;
+	margin-bottom: 32px; // difference between video size and track height
+	position: relative;
+	width: 320px; // yeah, embedding with 100% width and setting this fixed; but it's easier to hack around
+	
+	iframe {
+		height: 100%;
+		max-height: 240px; // this is the minimum height for some videos (i.e. 240p)
+		width: auto;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* PROGRESS BAR
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#progressBar{
+	cursor:pointer;
+	height:2px;	
+	overflow:hidden;	
+	width: 100%;
+}
+
+#progressBar .elapsed {
+	background-color: @blue;
+	height:2px;
+	width:0;
+}

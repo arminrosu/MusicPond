@@ -1,4 +1,4 @@
-@import url('classes.less');
+@import "yui-css-reset.less";
 
 @blue: #0383DA;
 @blue-darker: #0364a6;
@@ -34,12 +34,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* PAGE
+/* Header
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 header {
 	background: rgba(0, 0, 0, .6);
 	left: 0;
-	position: relative;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 3;
@@ -53,53 +53,6 @@ h1 {
 	text-shadow: 1px 1px 2px #000;
 }
 
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* VIDEO
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-@import url(video.less);
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* ADD
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#add-video {
-	bottom: 0;
-	height: 32px;
-	overflow: hidden;
-	position: fixed;
-	width: 100%;
-	z-index: 2;
-}
-
-#videoNew {
-	background: #fff;
-	border: none;
-	color: #0383DA;
-	float: left;
-	font-size: 14px;
-	height: 32px;
-	line-height: 32px;
-	padding: 0 5px;
-	width: 100%;
-}
-
-#videoAdd {
-	background: #0383DA;
-	border: none;
-	color: #fff;
-	right: 0;
-	height: 32px;
-	line-height: 32px;
-	position: absolute;
-	text-align: center;
-	top: 0;
-	width: 32px;
-}
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* NAV
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .controls {
 	color: @blue;
 	float: right;
@@ -123,36 +76,26 @@ h1 {
 	}
 }
 
-nav {
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Content
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#content {
+	box-sizing: border-box;
 	height: 100%;
-	padding-bottom: 40px;
+	padding: 38px 0 32px;
 }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* PLAYLIST
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#playlist {
 
+#playlist {
+	// column-width might be a bad decision, since it's fluid (i.e. can be wider)
 	   -moz-column-gap: 40px;
 	-webkit-column-gap: 40px;
 			column-gap: 40px;
-	   -moz-column-width: 240px;
-	-webkit-column-width: 240px;
-			column-width: 240px;
+	   -moz-column-width: 320px;
+	-webkit-column-width: 320px;
+			column-width: 320px;
 	height: 100%;
-	overflow: hidden;
-	padding: 20px 0 0;
 	
-	&.open {
-		max-height: 1000000px;
-		.transition(max-height, 1s);
-	}
-	
-	&.closed {
-		max-height: 0;
-		.transition(max-height, 1s);
-	}
-	
-	li {
+	.track {
 		background: transparent no-repeat left center;
 		background-size: contain;
 		border-bottom: 1px solid @gray;
@@ -231,6 +174,50 @@ nav {
 		}
 	}
 }
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* VIDEO
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@import "includes/video.less";
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ADD
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+footer {
+	bottom: 0;
+	height: 32px;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+
+#videoNew {
+	background: #fff;
+	border: none;
+	color: #0383DA;
+	float: left;
+	font-size: 14px;
+	height: 32px;
+	line-height: 32px;
+	padding: 0 5px;
+	width: 100%;
+}
+
+#videoAdd {
+	background: #0383DA;
+	border: none;
+	color: #fff;
+	right: 0;
+	height: 32px;
+	line-height: 32px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 32px;
+}
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* GENERIC

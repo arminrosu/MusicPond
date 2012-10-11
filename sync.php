@@ -28,7 +28,7 @@
 	
 	// do we have anything?
 	if( count( $new_tracks ) > 0 ) :
-		$response['new'] = $new_tracks;
+		$response['added'] = $new_tracks;
 	endif;
 	
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

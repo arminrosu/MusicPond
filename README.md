@@ -39,6 +39,19 @@ Well, it's actually not random and mostly has to do with _YouTube's iFrame API_.
 
 The code is largely the same for chromeless embed and it should be really easy to convert (I know this because it originally was this).
 
+## Changelog
+
+### 2012.10.11
+
+* minor code cleanup
+* switched to [jQuery TubePlayer](https://github.com/nirvanatikku/jQuery-TubePlayer-Plugin) for YouTube handling
+* switched to [CodeKit](https://incident57.com/codekit/) for .less and JavaScript concatenation & compression (if you're not into this, just merge all the .js into script.js)
+* moved video player ahead of playlist, as it was eating up just to much processing power
+
+### 2012.01.23
+
+* initial release
+
 ## License
 
 * The rest is licensend under the [BSD 3-Clause License](http://www.opensource.org/licenses/BSD-3-Clause). And I'd appreciate a note if you like it.
